@@ -13,12 +13,11 @@ import { UserService } from '../../services/user.service';
 })
 export class ProfileComponent {
   user$: Observable<User>;
-  isReadyUser: boolean = true;
 
   constructor(
     private userService: UserService,
     private readonly route: ActivatedRoute
-  ) {this.getUser();}
+  ) {}
 
   ngOnInit(): void {
     this.getUser();
@@ -26,12 +25,6 @@ export class ProfileComponent {
 
   getUser(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.user$ = this.userService.getUserFromId(id).pipe(
-      map((res) => {
-        this.isReadyUser = true;
-        console.log('user ret', res.data);
-        return res.data;
-      })
-    );
+    this.user$ = this.userService.getUserFromId(id);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
@@ -6,11 +6,11 @@ import { UserService } from '../../services/user.service';
 @Component({
   selector: 'user',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css'],
+  styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  name: string;
-  id: number;
+  // name: string;
+  // id: number;
   usersList: User[];
 
   constructor(

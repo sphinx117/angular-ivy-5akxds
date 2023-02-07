@@ -1,8 +1,7 @@
 <div>
-  <ul>
-    <li *ngFor="let user of usersList" (click)="goToProfile(user.id)">
-        <span>{{user.first_name}}</span>
-        <span>{{user.last_name}}</span>
-    </li>
-  </ul>
+  <div *ngFor="let user of usersList" (click)="goToProfile(user.id)">
+    <span>{{ user.id }} </span>
+    <span>{{ user.first_name }} </span>
+    <span>{{ user.last_name }} </span>
+  </div>
 </div>
